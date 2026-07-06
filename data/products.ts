@@ -214,5 +214,29 @@ export const products: Product[] = [
     kaspiUrl:
       "https://l.kaspi.kz/shop/GcL2FqQQFu5hxvh?sessionId=c94ef87f-66b7-49a2-bcda-6d00326fa0041783348608",
     badge: "Для подарка / 0-0-24"
+  },
+  {
+    title: "Лапшерезка PastaMaker",
+    fullTitle: "Лапшерезка YUNTEKO PastaMaker / тестораскатка электрическая",
+    description:
+      "Электрическая лапшерезка и тестораскатка для домашней пасты, лапши и заготовок из теста.",
+    price: "Цена в Kaspi",
+    image: "/products/pastamaker.jpg",
+    category: "Для дома",
+    kaspiUrl:
+      "https://kaspi.kz/shop/p/lapsherezka-yunteko-yunteko-pastamaker-testoraskatka-lapsherezka-elektricheskaja-170179362/?c=750000000&m=Yunigadget&ms=true",
+    badge: "Для кухни / Новинка"
+  },
+  {
+    title: "Утюжок YUNTEKO Gold",
+    fullTitle: "YUNTEKO Gold утюжок",
+    description:
+      "Утюжок для быстрой укладки и выпрямления волос дома. Подходит для аккуратной гладкой укладки на каждый день.",
+    price: "Цена в Kaspi",
+    image: "/products/gold-straightener.jpeg",
+    category: "Для красоты",
+    kaspiUrl:
+      "https://kaspi.kz/shop/p/yunteko-gold-utjuzhok-157022358/?c=750000000&m=Yunigadget&ms=true",
+    badge: "Beauty / Для укладки"
   }
 ];
