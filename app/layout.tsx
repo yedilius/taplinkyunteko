@@ -6,7 +6,7 @@ const siteDescription =
   "Техника и гаджеты YUNTEKO для дома, спорта и комфорта. Быстрый мобильный каталог с переходом к покупке в Kaspi.";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://yunteko-catalog.vercel.app"),
+  metadataBase: new URL("https://taplinkyunteko.vercel.app"),
   title: siteTitle,
   description: siteDescription,
   applicationName: "YUNTEKO Catalog",
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: siteTitle,
     description: siteDescription,
-    url: "https://yunteko-catalog.vercel.app",
+    url: "https://taplinkyunteko.vercel.app",
     siteName: "YUNTEKO",
     images: [
       {
