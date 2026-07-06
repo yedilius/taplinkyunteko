@@ -1,9 +1,22 @@
 import type { Metadata, Viewport } from "next";
+import { Manrope, Unbounded } from "next/font/google";
 import "./globals.css";
 
 const siteTitle = "YUNTEKO | Каталог товаров в Kaspi";
 const siteDescription =
   "Техника и гаджеты YUNTEKO для дома, спорта и комфорта. Быстрый мобильный каталог с переходом к покупке в Kaspi.";
+
+const manrope = Manrope({
+  subsets: ["cyrillic", "latin"],
+  variable: "--font-manrope",
+  display: "swap"
+});
+
+const unbounded = Unbounded({
+  subsets: ["cyrillic", "latin"],
+  variable: "--font-unbounded",
+  display: "swap"
+});
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://taplinkyunteko.vercel.app"),
@@ -26,10 +39,10 @@ export const metadata: Metadata = {
     siteName: "YUNTEKO",
     images: [
       {
-        url: "/og.svg",
-        width: 1200,
-        height: 630,
-        alt: "YUNTEKO premium catalog"
+        url: "/brand/yunteko-hero-bg.png",
+        width: 1792,
+        height: 1024,
+        alt: "YUNTEKO premium catalog background"
       }
     ],
     locale: "ru_KZ",
@@ -39,12 +52,12 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: siteTitle,
     description: siteDescription,
-    images: ["/og.svg"]
+    images: ["/brand/yunteko-hero-bg.png"]
   },
   icons: {
-    icon: "/favicon.svg",
-    shortcut: "/favicon.svg",
-    apple: "/favicon.svg"
+    icon: "/brand/yunteko-logo-circle.png",
+    shortcut: "/brand/yunteko-logo-circle.png",
+    apple: "/brand/yunteko-logo-circle.png"
   }
 };
 
@@ -62,7 +75,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ru">
-      <body>{children}</body>
+      <body className={`${manrope.variable} ${unbounded.variable}`}>{children}</body>
     </html>
   );
 }

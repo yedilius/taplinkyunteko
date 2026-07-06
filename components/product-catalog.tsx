@@ -52,39 +52,74 @@ export function ProductCatalog({ products }: { products: Product[] }) {
   }, [activeCategory, products, search]);
 
   return (
-    <main className="min-h-screen">
+    <main className="min-h-screen font-[var(--font-manrope)]">
       <section className="mx-auto flex w-full max-w-6xl flex-col gap-8 px-4 pb-16 pt-5 sm:px-6 lg:px-8">
         <Header />
 
-        <section className="rounded-[2rem] border border-line bg-ink px-5 py-7 text-white shadow-premium sm:px-8 sm:py-9">
-          <p className="mb-3 text-xs font-semibold uppercase tracking-[0.28em] text-white/55">
-            YUNTEKO mini-shop
-          </p>
-          <div className="grid gap-7 lg:grid-cols-[1.1fr_0.9fr] lg:items-end">
-            <div>
-              <h1 className="max-w-3xl text-4xl font-semibold leading-[0.98] tracking-[-0.04em] sm:text-6xl">
-                Техника и гаджеты для дома, спорта и комфорта
-              </h1>
-              <p className="mt-5 max-w-2xl text-base leading-7 text-white/72 sm:text-lg">
-                Брендовый каталог YUNTEKO с быстрым переходом к покупке на Kaspi. Фото,
-                цены, подарки и рассрочка собраны в одном удобном мобильном формате.
-              </p>
+        <section className="relative overflow-hidden rounded-[2rem] border border-white/10 bg-ink px-5 py-7 text-white shadow-premium sm:px-8 sm:py-9">
+          <Image
+            src="/brand/yunteko-hero-bg.png"
+            alt=""
+            fill
+            priority
+            sizes="(min-width: 1024px) 1152px, 100vw"
+            className="object-cover opacity-35"
+          />
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_15%,rgba(255,255,255,0.12),transparent_32rem),linear-gradient(180deg,rgba(0,0,0,0.18),rgba(0,0,0,0.86))]" />
+
+          <div className="relative">
+            <div className="mb-8 flex items-center justify-between gap-4">
+              <div className="flex items-center gap-3">
+                <span className="relative flex h-14 w-14 shrink-0 items-center justify-center overflow-hidden rounded-2xl border border-white/15 bg-black/60">
+                  <Image
+                    src="/brand/yunteko-mark.png"
+                    alt="YUNTEKO"
+                    fill
+                    sizes="56px"
+                    className="object-contain p-1"
+                  />
+                </span>
+                <div>
+                  <p className="font-[var(--font-unbounded)] text-[11px] font-semibold uppercase tracking-[0.34em] text-white">
+                    YUNTEKO
+                  </p>
+                  <p className="mt-1 text-xs font-medium text-white/55">Official mini catalog</p>
+                </div>
+              </div>
+              <span className="rounded-full border border-white/15 bg-white/10 px-3 py-2 text-[10px] font-bold uppercase tracking-[0.18em] text-white/80 backdrop-blur">
+                Kaspi витрина
+              </span>
             </div>
 
-            <div className="flex flex-col gap-4 rounded-3xl border border-white/10 bg-white/[0.06] p-4">
-              <div className="grid grid-cols-3 gap-2 text-center text-[11px] font-semibold uppercase tracking-[0.12em] text-white/75">
-                <span className="rounded-2xl bg-white/10 px-2 py-3">Доставка</span>
-                <span className="rounded-2xl bg-white/10 px-2 py-3">Kaspi</span>
-                <span className="rounded-2xl bg-accent px-2 py-3 text-white">0-0-24</span>
+            <div className="grid gap-7 lg:grid-cols-[1.1fr_0.9fr] lg:items-end">
+              <div>
+                <p className="mb-3 text-xs font-semibold uppercase tracking-[0.28em] text-white/55">
+                  Premium selection
+                </p>
+                <h1 className="max-w-3xl font-[var(--font-unbounded)] text-[2.35rem] font-semibold leading-[1.04] tracking-[-0.06em] sm:text-6xl">
+                  Техника и гаджеты для дома, спорта и комфорта
+                </h1>
+                <p className="mt-5 max-w-2xl text-base leading-7 text-white/74 sm:text-lg">
+                  Брендовый каталог YUNTEKO с быстрым переходом к покупке на Kaspi.
+                  Фото, цены, подарки и рассрочка собраны в одном удобном мобильном формате.
+                </p>
               </div>
-              <a
-                href={kaspiShopUrl}
-                target="_blank"
-                rel="noreferrer"
-                className="inline-flex min-h-12 items-center justify-center rounded-2xl bg-white px-5 text-sm font-bold uppercase tracking-[0.16em] text-ink transition hover:bg-accent hover:text-white"
-              >
-                Перейти в Kaspi магазин
-              </a>
+
+              <div className="flex flex-col gap-4 rounded-3xl border border-white/10 bg-black/45 p-4 shadow-[inset_0_1px_0_rgba(255,255,255,0.08)] backdrop-blur-md">
+                <div className="grid grid-cols-3 gap-2 text-center text-[11px] font-semibold uppercase tracking-[0.12em] text-white/75">
+                  <span className="rounded-2xl bg-white/10 px-2 py-3">Доставка</span>
+                  <span className="rounded-2xl bg-white/10 px-2 py-3">Kaspi</span>
+                  <span className="rounded-2xl bg-accent px-2 py-3 text-white">0-0-24</span>
+                </div>
+                <a
+                  href={kaspiShopUrl}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-flex min-h-12 items-center justify-center rounded-2xl bg-white px-5 text-sm font-extrabold uppercase tracking-[0.16em] text-ink transition hover:bg-accent hover:text-white"
+                >
+                  Перейти в Kaspi магазин
+                </a>
+              </div>
             </div>
           </div>
         </section>
@@ -156,7 +191,7 @@ export function ProductCatalog({ products }: { products: Product[] }) {
                     <p className="text-xs font-bold uppercase tracking-[0.18em] text-accent">
                       {product.category}
                     </p>
-                    <h2 className="mt-2 text-2xl font-semibold leading-tight tracking-[-0.03em] text-ink">
+                    <h2 className="mt-2 font-[var(--font-unbounded)] text-xl font-semibold leading-tight tracking-[-0.04em] text-ink">
                       {product.title}
                     </h2>
                   </div>
@@ -207,16 +242,24 @@ export function ProductCatalog({ products }: { products: Product[] }) {
 
 function Header() {
   return (
-    <header className="flex items-center justify-between gap-3 rounded-full border border-line bg-white/85 p-2 pl-4 shadow-[0_12px_30px_rgba(13,13,15,0.06)] backdrop-blur">
+    <header className="flex items-center justify-between gap-3 rounded-full border border-neutral-200 bg-white/90 p-2 pr-2 shadow-[0_12px_30px_rgba(13,13,15,0.06)] backdrop-blur">
       <a href="#" className="flex items-center gap-3" aria-label="YUNTEKO">
-        <span className="flex h-10 w-10 items-center justify-center rounded-full bg-ink text-sm font-black text-white">
-          Y
+        <span className="relative flex h-11 w-11 shrink-0 items-center justify-center overflow-hidden rounded-full bg-ink">
+          <Image
+            src="/brand/yunteko-mark.png"
+            alt=""
+            fill
+            sizes="44px"
+            className="object-contain p-1"
+          />
         </span>
         <span>
-          <span className="block text-sm font-black uppercase tracking-[0.2em] text-ink">
+          <span className="block font-[var(--font-unbounded)] text-xs font-semibold uppercase tracking-[0.24em] text-ink">
             YUNTEKO
           </span>
-          <span className="hidden text-xs text-neutral-500 sm:block">Premium catalog</span>
+          <span className="hidden text-xs font-medium text-neutral-500 sm:block">
+            Premium catalog
+          </span>
         </span>
       </a>
       <a
