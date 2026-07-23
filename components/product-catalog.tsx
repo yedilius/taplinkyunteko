@@ -24,6 +24,8 @@ const categories: CategoryFilter[] = [
 ];
 
 const kaspiShopUrl = "https://kaspi.kz/shop/search/?text=YUNTEKO";
+const whatsappUrl =
+  "https://wa.me/77075383501?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5!%20%D0%A5%D0%BE%D1%87%D1%83%20%D0%BA%D0%BE%D0%BD%D1%81%D1%83%D0%BB%D1%8C%D1%82%D0%B0%D1%86%D0%B8%D1%8E%20%D0%BF%D0%BE%20%D1%82%D0%BE%D0%B2%D0%B0%D1%80%D0%B0%D0%BC%20YUNTEKO.";
 
 export function ProductCatalog({ products }: { products: Product[] }) {
   const [activeCategory, setActiveCategory] = useState<CategoryFilter>("Все товары");
@@ -43,12 +45,13 @@ export function ProductCatalog({ products }: { products: Product[] }) {
       const matchesCategory =
         activeCategory === "Все товары" ||
         product.category === activeCategory ||
+        (activeCategory === "Для спорта" && isSportProduct(product)) ||
         (activeCategory === "Подарки" &&
           /подар|комплект|сумка|пакет/i.test(product.badge)) ||
         (activeCategory === "Хиты продаж" && /хит/i.test(product.badge));
 
       return matchesSearch && matchesCategory;
-    });
+    }).sort((first, second) => productRank(first, activeCategory) - productRank(second, activeCategory));
   }, [activeCategory, products, search]);
 
   return (
@@ -111,14 +114,24 @@ export function ProductCatalog({ products }: { products: Product[] }) {
                   <span className="rounded-2xl bg-white/10 px-2 py-3">Kaspi</span>
                   <span className="rounded-2xl bg-accent px-2 py-3 text-white">0-0-24</span>
                 </div>
-                <a
-                  href={kaspiShopUrl}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="inline-flex min-h-12 items-center justify-center rounded-2xl bg-white px-5 text-sm font-extrabold uppercase tracking-[0.16em] text-ink transition hover:bg-accent hover:text-white"
-                >
-                  Перейти в Kaspi магазин
-                </a>
+                <div className="grid gap-2 sm:grid-cols-2">
+                  <a
+                    href={kaspiShopUrl}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="inline-flex min-h-12 items-center justify-center rounded-2xl bg-white px-5 text-center text-sm font-extrabold uppercase tracking-[0.16em] text-ink transition hover:bg-accent hover:text-white"
+                  >
+                    Перейти в Kaspi
+                  </a>
+                  <a
+                    href={whatsappUrl}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="inline-flex min-h-12 items-center justify-center rounded-2xl border border-white/15 bg-white/10 px-5 text-center text-sm font-extrabold uppercase tracking-[0.16em] text-white transition hover:bg-white hover:text-ink"
+                  >
+                    Связаться
+                  </a>
+                </div>
               </div>
             </div>
           </div>
@@ -156,6 +169,28 @@ export function ProductCatalog({ products }: { products: Product[] }) {
               ))}
             </div>
           </div>
+        </section>
+
+        <section className="grid gap-4 rounded-[1.65rem] border border-line bg-white p-5 shadow-[0_10px_40px_rgba(13,13,15,0.06)] sm:grid-cols-[1fr_auto] sm:items-center sm:p-6">
+          <div>
+            <p className="text-xs font-bold uppercase tracking-[0.2em] text-accent">
+              Консультация
+            </p>
+            <h2 className="mt-2 font-[var(--font-unbounded)] text-2xl font-semibold tracking-[-0.04em] text-ink">
+              Поможем выбрать товар YUNTEKO
+            </h2>
+            <p className="mt-3 max-w-2xl text-sm leading-6 text-neutral-600">
+              Напишите в WhatsApp, если нужно подобрать модель, уточнить комплект или быстро перейти к покупке.
+            </p>
+          </div>
+          <a
+            href={whatsappUrl}
+            target="_blank"
+            rel="noreferrer"
+            className="inline-flex min-h-12 items-center justify-center rounded-2xl bg-ink px-6 text-sm font-bold uppercase tracking-[0.14em] text-white transition hover:bg-accent"
+          >
+            Связаться в WhatsApp
+          </a>
         </section>
 
         <section className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3" aria-live="polite">
@@ -262,14 +297,59 @@ function Header() {
           </span>
         </span>
       </a>
-      <a
-        href={kaspiShopUrl}
-        target="_blank"
-        rel="noreferrer"
-        className="rounded-full bg-ink px-4 py-3 text-xs font-bold uppercase tracking-[0.12em] text-white transition hover:bg-accent sm:px-5"
-      >
-        Kaspi
-      </a>
+      <div className="flex shrink-0 items-center gap-2">
+        <a
+          href={whatsappUrl}
+          target="_blank"
+          rel="noreferrer"
+          className="rounded-full border border-line bg-white px-3 py-3 text-[11px] font-bold uppercase tracking-[0.1em] text-ink transition hover:border-ink sm:px-4"
+        >
+          Связаться
+        </a>
+        <a
+          href={kaspiShopUrl}
+          target="_blank"
+          rel="noreferrer"
+          className="rounded-full bg-ink px-4 py-3 text-xs font-bold uppercase tracking-[0.12em] text-white transition hover:bg-accent sm:px-5"
+        >
+          Kaspi
+        </a>
+      </div>
     </header>
   );
+}
+
+function productText(product: Product) {
+  return `${product.title} ${product.fullTitle} ${product.description} ${product.badge}`.toLowerCase();
+}
+
+function isWatch(product: Product) {
+  return /смарт-часы|active s100|gi20|dks10|dmi50|zwi39|zwi67|i58/i.test(productText(product));
+}
+
+function isHeadphones(product: Product) {
+  return /наушники|movepro/i.test(productText(product));
+}
+
+function isSportProduct(product: Product) {
+  return product.category === "Для спорта" || isWatch(product) || isHeadphones(product);
+}
+
+function productRank(product: Product, activeCategory: CategoryFilter) {
+  const text = productText(product);
+
+  if (activeCategory === "Для спорта") {
+    if (/active s100/i.test(text)) return 0;
+    if (isWatch(product)) return 1;
+    if (isHeadphones(product)) return 2;
+    if (/виброплатформа/i.test(text)) return 3;
+    return 20;
+  }
+
+  if (/лапшерез|pastamaker/i.test(text)) return 0;
+  if (/утюжок|выпрямитель|gold/i.test(text)) return 1;
+  if (/вакууматор|вакуумный упаковщик/i.test(text)) return 2;
+  if (/массажер|массаж/i.test(text)) return 3;
+  if (/active s100/i.test(text)) return 4;
+  return 20;
 }

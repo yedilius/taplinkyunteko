@@ -33,7 +33,7 @@ export const products: Product[] = [
     "badge": "YUNTEKO"
   },
   {
-    "title": "???????? MovePro",
+    "title": "Наушники MovePro",
     "fullTitle": "Наушники YUNTEKO Спортивные наушники YUNTEKO MovePro черный",
     "description": "Спортивные наушники YUNTEKO для тренировок, прогулок и ежедневного использования.",
     "price": "15 880 ₸",
@@ -58,19 +58,9 @@ export const products: Product[] = [
     "description": "Товар YUNTEKO с правильной ссылкой на покупку в Kaspi.",
     "price": "17 880 ₸",
     "image": "/products/kaspi/kaspi-05.jpg",
-    "category": "Гаджеты",
+    "category": "Для дома",
     "kaspiUrl": "https://l.kaspi.kz/shop/EEGqUbPvbaW1CyZ?sessionId=c94ef87f-66b7-49a2-bcda-6d00326fa0041783532120",
     "badge": "Хит / 0-0-24"
-  },
-  {
-    "title": "Зарядное устройство YUNTEKO 30W-TLC белый",
-    "fullTitle": "Зарядное устройство YUNTEKO 30W-TLC белый",
-    "description": "Товар YUNTEKO с правильной ссылкой на покупку в Kaspi.",
-    "price": "4 990 ₸",
-    "image": "/products/kaspi/kaspi-06.jpg",
-    "category": "Гаджеты",
-    "kaspiUrl": "https://l.kaspi.kz/shop/5jidUcZiwxN7hDT?sessionId=c94ef87f-66b7-49a2-bcda-6d00326fa0041783532120",
-    "badge": "YUNTEKO"
   },
   {
     "title": "Смарт-часы YUNTEKO i58 44 мм золотистый-ро",
@@ -123,14 +113,14 @@ export const products: Product[] = [
     "badge": "Для чистоты"
   },
   {
-    "title": "Комплект Relax+",
+    "title": "Массажер Relax+",
     "fullTitle": "Массажер YUNTEKO Relax + напольный 3D-массаж",
-    "description": "Комплект YUNTEKO из нескольких товаров с одной правильной ссылкой на Kaspi.",
+    "description": "Напольный массажер YUNTEKO для расслабления ног и домашнего ухода.",
     "price": "69 880 ₸",
     "image": "/products/kaspi/kaspi-12.jpg",
     "category": "Для дома",
     "kaspiUrl": "https://l.kaspi.kz/shop/CcfeNhqSSm52rn7?sessionId=c94ef87f-66b7-49a2-bcda-6d00326fa0041783532120",
-    "badge": "Комплект / Для подарка"
+    "badge": "Премиум / Для дома"
   },
   {
     "title": "Утюжок YUNTEKO Gold",
@@ -150,16 +140,6 @@ export const products: Product[] = [
     "image": "/products/kaspi/kaspi-14.jpg",
     "category": "Гаджеты",
     "kaspiUrl": "https://l.kaspi.kz/shop/3H8x9rS8wX6rsnt?sessionId=c94ef87f-66b7-49a2-bcda-6d00326fa0041783532120",
-    "badge": "YUNTEKO"
-  },
-  {
-    "title": "Зарядное устройство YUNTEKO 20W PD Type-C ",
-    "fullTitle": "Зарядное устройство YUNTEKO 20W PD Type-C белый",
-    "description": "Товар YUNTEKO с правильной ссылкой на покупку в Kaspi.",
-    "price": "4 880 ₸",
-    "image": "/products/kaspi/kaspi-15.jpg",
-    "category": "Гаджеты",
-    "kaspiUrl": "https://l.kaspi.kz/shop/2shgZBXhdwjj657?sessionId=c94ef87f-66b7-49a2-bcda-6d00326fa0041783532120",
     "badge": "YUNTEKO"
   },
   {
@@ -185,7 +165,7 @@ export const products: Product[] = [
   {
     "title": "Комплект Active S100",
     "fullTitle": "Смарт-часы YUNTEKO Active S100 47 мм графитовый-черный + подарок",
-    "description": "Комплект YUNTEKO из нескольких товаров с одной правильной ссылкой на Kaspi.",
+    "description": "Комплект YUNTEKO из нескольких товаров с одной ссылкой на Kaspi.",
     "price": "35 880 ₸",
     "image": "/products/kaspi/kaspi-18.jpg",
     "category": "Гаджеты",
@@ -275,7 +255,7 @@ export const products: Product[] = [
   {
     "title": "Комплект ZWi39",
     "fullTitle": "Смарт-часы YUNTEKO ZWi39 43 мм черный + смарт-часы YUNTEKO ZWi39 бежевый",
-    "description": "Комплект YUNTEKO из нескольких товаров с одной правильной ссылкой на Kaspi.",
+    "description": "Комплект YUNTEKO из нескольких товаров с одной ссылкой на Kaspi.",
     "price": "27 960 ₸",
     "image": "/products/kaspi/kaspi-27.jpg",
     "category": "Гаджеты",
@@ -295,7 +275,7 @@ export const products: Product[] = [
   {
     "title": "Комплект Gi20",
     "fullTitle": "Смарт-часы YUNTEKO Gi20 47 мм розовый + подарок",
-    "description": "Комплект YUNTEKO из нескольких товаров с одной правильной ссылкой на Kaspi.",
+    "description": "Комплект YUNTEKO из нескольких товаров с одной ссылкой на Kaspi.",
     "price": "27 880 ₸",
     "image": "/products/kaspi/kaspi-29.jpg",
     "category": "Гаджеты",
@@ -305,7 +285,7 @@ export const products: Product[] = [
   {
     "title": "Комплект Gi20",
     "fullTitle": "Смарт-часы YUNTEKO Gi20 47 мм розовый + подарок",
-    "description": "Комплект YUNTEKO из нескольких товаров с одной правильной ссылкой на Kaspi.",
+    "description": "Комплект YUNTEKO из нескольких товаров с одной ссылкой на Kaspi.",
     "price": "27 880 ₸",
     "image": "/products/kaspi/kaspi-30.jpg",
     "category": "Гаджеты",
@@ -335,7 +315,7 @@ export const products: Product[] = [
   {
     "title": "Комплект Active S100",
     "fullTitle": "Наушники YUNTEKO MovePro черный + Смарт-часы YUNTEKO Active S100 графитово-чёрные",
-    "description": "Комплект YUNTEKO из нескольких товаров с одной правильной ссылкой на Kaspi.",
+    "description": "Комплект YUNTEKO из нескольких товаров с одной ссылкой на Kaspi.",
     "price": "29 880 ₸",
     "image": "/products/kaspi/kaspi-33.jpg",
     "category": "Гаджеты",
@@ -345,7 +325,7 @@ export const products: Product[] = [
   {
     "title": "Комплект ZWi39",
     "fullTitle": "Смарт-часы YUNTEKO ZWi39 43 мм бежевый + смарт-часы YUNTEKO ZWi39 бежевый",
-    "description": "Комплект YUNTEKO из нескольких товаров с одной правильной ссылкой на Kaspi.",
+    "description": "Комплект YUNTEKO из нескольких товаров с одной ссылкой на Kaspi.",
     "price": "27 960 ₸",
     "image": "/products/kaspi/kaspi-34.jpg",
     "category": "Гаджеты",
@@ -355,7 +335,7 @@ export const products: Product[] = [
   {
     "title": "Комплект i58",
     "fullTitle": "Смарт-часы YUNTEKO i58 44 мм золотистый + смарт-часы YUNTEKO i58 розовый",
-    "description": "Комплект YUNTEKO из нескольких товаров с одной правильной ссылкой на Kaspi.",
+    "description": "Комплект YUNTEKO из нескольких товаров с одной ссылкой на Kaspi.",
     "price": "45 870 ₸",
     "image": "/products/kaspi/kaspi-35.jpg",
     "category": "Гаджеты",
@@ -365,7 +345,7 @@ export const products: Product[] = [
   {
     "title": "Комплект i58",
     "fullTitle": "Смарт-часы YUNTEKO i58 44 мм розовый + смарт-часы YUNTEKO i58 белый",
-    "description": "Комплект YUNTEKO из нескольких товаров с одной правильной ссылкой на Kaspi.",
+    "description": "Комплект YUNTEKO из нескольких товаров с одной ссылкой на Kaspi.",
     "price": "46 870 ₸",
     "image": "/products/kaspi/kaspi-36.jpg",
     "category": "Гаджеты",
@@ -375,7 +355,7 @@ export const products: Product[] = [
   {
     "title": "Комплект DMi50",
     "fullTitle": "Смарт-часы YUNTEKO DMi50 47 мм черный + смарт-часы YUNTEKO DMi50 черный",
-    "description": "Комплект YUNTEKO из нескольких товаров с одной правильной ссылкой на Kaspi.",
+    "description": "Комплект YUNTEKO из нескольких товаров с одной ссылкой на Kaspi.",
     "price": "55 880 ₸",
     "image": "/products/kaspi/kaspi-37.jpg",
     "category": "Гаджеты",
@@ -385,7 +365,7 @@ export const products: Product[] = [
   {
     "title": "Комплект DMi50",
     "fullTitle": "Смарт-часы YUNTEKO DMi50 черный+ смарт-часы YUNTEKO i58 розовый 47 мм серебристый-черный-черный",
-    "description": "Комплект YUNTEKO из нескольких товаров с одной правильной ссылкой на Kaspi.",
+    "description": "Комплект YUNTEKO из нескольких товаров с одной ссылкой на Kaspi.",
     "price": "51 890 ₸",
     "image": "/products/kaspi/kaspi-38.jpg",
     "category": "Гаджеты",
@@ -395,7 +375,7 @@ export const products: Product[] = [
   {
     "title": "Комплект Gi20",
     "fullTitle": "Смарт-часы YUNTEKO Gi20 47 мм черный + подарок",
-    "description": "Комплект YUNTEKO из нескольких товаров с одной правильной ссылкой на Kaspi.",
+    "description": "Комплект YUNTEKO из нескольких товаров с одной ссылкой на Kaspi.",
     "price": "27 875 ₸",
     "image": "/products/kaspi/kaspi-39.jpg",
     "category": "Гаджеты",
@@ -405,7 +385,7 @@ export const products: Product[] = [
   {
     "title": "Комплект DKS10",
     "fullTitle": "Смарт-часы YUNTEKO DKS10 бежевый + смарт-часы YUNTEKO DKS10 47 мм черный-черный",
-    "description": "Комплект YUNTEKO из нескольких товаров с одной правильной ссылкой на Kaspi.",
+    "description": "Комплект YUNTEKO из нескольких товаров с одной ссылкой на Kaspi.",
     "price": "46 870 ₸",
     "image": "/products/kaspi/kaspi-40.jpg",
     "category": "Гаджеты",
@@ -415,7 +395,7 @@ export const products: Product[] = [
   {
     "title": "Комплект DKS10",
     "fullTitle": "Смарт-часы YUNTEKO DKS10 47 мм черный + смарт-часы YUNTEKO i58 розовый",
-    "description": "Комплект YUNTEKO из нескольких товаров с одной правильной ссылкой на Kaspi.",
+    "description": "Комплект YUNTEKO из нескольких товаров с одной ссылкой на Kaspi.",
     "price": "45 880 ₸",
     "image": "/products/kaspi/kaspi-41.jpg",
     "category": "Гаджеты",
@@ -425,7 +405,7 @@ export const products: Product[] = [
   {
     "title": "Комплект DKS10",
     "fullTitle": "Смарт-часы YUNTEKO DKS10 черный + смарт-часы YUNTEKO DKS10 черный 47 мм черный-черный",
-    "description": "Комплект YUNTEKO из нескольких товаров с одной правильной ссылкой на Kaspi.",
+    "description": "Комплект YUNTEKO из нескольких товаров с одной ссылкой на Kaspi.",
     "price": "46 890 ₸",
     "image": "/products/kaspi/kaspi-42.jpg",
     "category": "Гаджеты",
