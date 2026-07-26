@@ -44,7 +44,7 @@ export function ProductCatalog({ products }: { products: Product[] }) {
 
       const matchesCategory =
         activeCategory === "Все товары" ||
-        product.category === activeCategory ||
+        (product.category as CategoryFilter) === activeCategory ||
         (activeCategory === "Для спорта" && isSportProduct(product)) ||
         (activeCategory === "Подарки" &&
           /подар|комплект|сумка|пакет/i.test(product.badge)) ||
@@ -231,7 +231,7 @@ export function ProductCatalog({ products }: { products: Product[] }) {
                     </h2>
                   </div>
                   <p className="shrink-0 rounded-2xl bg-soft px-3 py-2 text-right text-lg font-black text-ink">
-                    {product.price}
+                    {formatInstallments(product.price)}
                   </p>
                 </div>
 
@@ -248,6 +248,9 @@ export function ProductCatalog({ products }: { products: Product[] }) {
                 >
                   Купить на Kaspi
                 </a>
+                <p className="mt-2 text-center text-[11px] font-semibold uppercase tracking-[0.16em] text-neutral-400">
+                  0-0-12 / 0-0-24
+                </p>
               </div>
             </article>
           ))}
@@ -332,7 +335,7 @@ function isHeadphones(product: Product) {
 }
 
 function isSportProduct(product: Product) {
-  return product.category === "Для спорта" || isWatch(product) || isHeadphones(product);
+  return (product.category as CategoryFilter) === "Для спорта" || isWatch(product) || isHeadphones(product);
 }
 
 function productRank(product: Product, activeCategory: CategoryFilter) {
@@ -352,4 +355,11 @@ function productRank(product: Product, activeCategory: CategoryFilter) {
   if (/массажер|массаж/i.test(text)) return 3;
   if (/active s100/i.test(text)) return 4;
   return 20;
+}
+
+function formatInstallments(price: string) {
+  const amount = Number.parseInt(price.replace(/[^\d]/g, ""), 10);
+  if (!Number.isFinite(amount) || amount <= 0) return price;
+
+  return `${Math.round(amount / 12)}*12 / ${Math.round(amount / 24)}*24`;
 }
