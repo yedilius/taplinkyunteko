@@ -194,8 +194,11 @@ export function ProductCatalog({ products }: { products: Product[] }) {
         </section>
 
         <section className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3" aria-live="polite">
-          {filteredProducts.map((product, index) => (
-            <article
+          {filteredProducts.map((product, index) => {
+            const installments = getInstallments(product.price);
+
+            return (
+              <article
               key={product.kaspiUrl}
               className="group overflow-hidden rounded-[1.65rem] border border-line bg-white shadow-[0_10px_40px_rgba(13,13,15,0.06)] transition duration-300 hover:-translate-y-1 hover:shadow-premium"
             >
@@ -230,9 +233,18 @@ export function ProductCatalog({ products }: { products: Product[] }) {
                       {product.title}
                     </h2>
                   </div>
-                  <p className="shrink-0 rounded-2xl bg-soft px-3 py-2 text-right text-lg font-black text-ink">
-                    {formatInstallments(product.price)}
-                  </p>
+                  <div className="min-w-[8.75rem] shrink-0 rounded-2xl bg-soft px-3 py-2.5 text-right">
+                    <p className="text-[9px] font-bold uppercase tracking-[0.14em] text-accent">
+                      от
+                    </p>
+                    <p className="whitespace-nowrap text-xl font-black leading-none text-ink">
+                      {formatAmount(installments.monthly24)} ₸
+                      <span className="ml-1 text-[10px] font-bold text-neutral-500">/мес</span>
+                    </p>
+                    <p className="mt-1.5 whitespace-nowrap text-[10px] font-semibold text-neutral-500">
+                      или {formatAmount(installments.monthly12)} ₸ × 12
+                    </p>
+                  </div>
                 </div>
 
                 <p className="line-clamp-3 text-sm leading-6 text-neutral-600">
@@ -248,12 +260,13 @@ export function ProductCatalog({ products }: { products: Product[] }) {
                 >
                   Купить на Kaspi
                 </a>
-                <p className="mt-2 text-center text-[11px] font-semibold uppercase tracking-[0.16em] text-neutral-400">
-                  0-0-12 / 0-0-24
+                <p className="mt-2 text-center text-[11px] font-bold uppercase tracking-[0.12em] text-neutral-500">
+                  Рассрочка 0-0-12 · 0-0-24 без переплаты
                 </p>
               </div>
             </article>
-          ))}
+            );
+          })}
         </section>
 
         {filteredProducts.length === 0 && (
@@ -357,9 +370,15 @@ function productRank(product: Product, activeCategory: CategoryFilter) {
   return 20;
 }
 
-function formatInstallments(price: string) {
+function getInstallments(price: string) {
   const amount = Number.parseInt(price.replace(/[^\d]/g, ""), 10);
-  if (!Number.isFinite(amount) || amount <= 0) return price;
 
-  return `${Math.round(amount / 12)}*12 / ${Math.round(amount / 24)}*24`;
+  return {
+    monthly12: Number.isFinite(amount) && amount > 0 ? Math.round(amount / 12) : 0,
+    monthly24: Number.isFinite(amount) && amount > 0 ? Math.round(amount / 24) : 0,
+  };
+}
+
+function formatAmount(amount: number) {
+  return String(amount).replace(/\B(?=(\d{3})+(?!\d))/g, " ");
 }
